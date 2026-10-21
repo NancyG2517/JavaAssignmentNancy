@@ -1,0 +1,11 @@
+==============================================
+  SwagLabs Test Results — FileReporter
+  Generated: 2026-10-16 12:38:31
+==============================================
+[2026-10-16 12:38:51] [PASS] TC001 | Status: PASSED
+[2026-10-16 12:38:56] [PASS] TC002 | Status: PASSED
+[2026-10-16 12:38:59] [PASS] TC003 | Status: PASSED
+[2026-10-16 12:39:14] [FAIL] TC004 | Status: FAILED | Reason: Logout did not redirect to login page. URL: https://www.saucedemo.com/inventory.html
+----------------------------------------------
+SUMMARY: Total=4 | Passed=3 | Failed=1
+----------------------------------------------

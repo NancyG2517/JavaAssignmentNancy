@@ -1,0 +1,166 @@
+package com.swaglabs.reporting;
+
+import com.swaglabs.utilities.LoggerManager;
+import org.apache.logging.log4j.Logger;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class HtmlReporter extends BaseReporter {
+
+    private static final Logger logger = LoggerManager.getLogger(HtmlReporter.class);
+
+    private static final String REPORT_DIR  = "test-results";
+    private static final String REPORT_FILE = REPORT_DIR + "/test-report.html";
+
+    private static final DateTimeFormatter DATETIME_FMT =
+            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+    private final List<String[]> results = new ArrayList<>();
+
+    public HtmlReporter() {
+        new File(REPORT_DIR).mkdirs();
+        logger.debug("DEBUG: HtmlReporter initialised. Output = " + REPORT_FILE);
+    }
+    @Override
+    public void logPass(String tcId) {
+        results.add(new String[]{ tcId, "PASS", "—" });
+        logger.info("HtmlReporter: PASS queued for " + tcId);
+        recordPass();
+    }
+
+    @Override
+    public void logFail(String tcId, String reason) {
+        results.add(new String[]{ tcId, "FAIL", reason });
+        logger.error("HtmlReporter: FAIL queued for " + tcId + " — " + reason);
+        recordFail();
+    }
+
+    @Override
+    public void printSummary() {
+        super.printSummary();       // print text summary to console
+        generateHtmlFile();         // write the HTML report to disk
+        System.out.println("  [HtmlReporter] Report generated: " + REPORT_FILE);
+        logger.info("HtmlReporter: HTML report written to: " + REPORT_FILE);
+    }
+
+    private void generateHtmlFile() {
+        String timestamp = LocalDateTime.now().format(DATETIME_FMT);
+        String html = buildHtml(timestamp);
+
+        try (BufferedWriter writer = new BufferedWriter(
+                new FileWriter(REPORT_FILE, false))) {
+            writer.write(html);
+        } catch (IOException e) {
+            logger.error("ERROR: HtmlReporter could not write '" +
+                    REPORT_FILE + "': " + e.getMessage());
+        }
+    }
+
+    private String buildHtml(String timestamp) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("<!DOCTYPE html>\n");
+        sb.append("<html lang='en'>\n<head>\n");
+        sb.append("  <meta charset='UTF-8'/>\n");
+        sb.append("  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>\n");
+        sb.append("  <title>SwagLabs Test Report</title>\n");
+        sb.append("  <style>\n");
+        sb.append(getCss());
+        sb.append("  </style>\n</head>\n<body>\n");
+
+        sb.append("  <header>\n");
+        sb.append("    <h1>SwagLabs Automation Test Report</h1>\n");
+        sb.append("    <p class='meta'>Framework: Maven + Selenium + TestNG + Log4j2 &nbsp;|&nbsp; ");
+        sb.append("Generated: <strong>").append(timestamp).append("</strong></p>\n");
+        sb.append("    <p class='meta'>Assignments 7 (Logging) &amp; 8 (OOP)</p>\n");
+        sb.append("  </header>\n\n");
+
+        sb.append("  <section class='summary'>\n");
+        sb.append(summaryCard("Total",  String.valueOf(getTotalTests()),  "card-total"));
+        sb.append(summaryCard("Passed", String.valueOf(getPassedTests()), "card-pass"));
+        sb.append(summaryCard("Failed", String.valueOf(getFailedTests()), "card-fail"));
+        sb.append("  </section>\n\n");
+
+        sb.append("  <section class='results'>\n");
+        sb.append("    <h2>Test Case Results</h2>\n");
+        sb.append("    <table>\n");
+        sb.append("      <thead>\n");
+        sb.append("        <tr><th>#</th><th>Test Case ID</th><th>Status</th><th>Notes / Failure Reason</th></tr>\n");
+        sb.append("      </thead>\n");
+        sb.append("      <tbody>\n");
+
+        int row = 1;
+        for (String[] result : results) {
+            String tcId   = result[0];
+            String status = result[1];
+            String reason = result[2];
+            String rowClass  = status.equals("PASS") ? "row-pass" : "row-fail";
+            String badgeClass = status.equals("PASS") ? "badge-pass" : "badge-fail";
+
+            sb.append("        <tr class='").append(rowClass).append("'>\n");
+            sb.append("          <td>").append(row++).append("</td>\n");
+            sb.append("          <td><strong>").append(tcId).append("</strong></td>\n");
+            sb.append("          <td><span class='").append(badgeClass)
+              .append("'>").append(status).append("</span></td>\n");
+            sb.append("          <td>").append(reason).append("</td>\n");
+            sb.append("        </tr>\n");
+        }
+
+        sb.append("      </tbody>\n");
+        sb.append("    </table>\n");
+        sb.append("  </section>\n\n");
+
+        sb.append("  <footer>\n");
+        sb.append("    <p>Generated by SwagLabs Automation Framework | ");
+        sb.append("OOP: Encapsulation · Inheritance · Abstraction · Interface · Polymorphism</p>\n");
+        sb.append("  </footer>\n");
+        sb.append("</body>\n</html>\n");
+
+        return sb.toString();
+    }
+
+    private String summaryCard(String label, String value, String cssClass) {
+        return "    <div class='card " + cssClass + "'>\n" +
+               "      <div class='card-value'>" + value + "</div>\n" +
+               "      <div class='card-label'>" + label + "</div>\n" +
+               "    </div>\n";
+    }
+
+    private String getCss() {
+        return
+            "    * { box-sizing: border-box; margin: 0; padding: 0; }\n" +
+            "    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; }\n" +
+            "    header { background: #1e3a5f; color: white; padding: 24px 40px; }\n" +
+            "    header h1 { font-size: 26px; margin-bottom: 8px; }\n" +
+            "    .meta { font-size: 13px; color: #b0c4d8; margin-top: 4px; }\n" +
+            "    .summary { display: flex; gap: 20px; padding: 24px 40px; flex-wrap: wrap; }\n" +
+            "    .card { flex: 1; min-width: 140px; background: white; border-radius: 10px; " +
+            "            padding: 20px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }\n" +
+            "    .card-value { font-size: 42px; font-weight: 700; }\n" +
+            "    .card-label { font-size: 14px; color: #666; margin-top: 6px; text-transform: uppercase; }\n" +
+            "    .card-total .card-value { color: #1e3a5f; }\n" +
+            "    .card-pass  .card-value { color: #16a34a; }\n" +
+            "    .card-fail  .card-value { color: #dc2626; }\n" +
+            "    .results { padding: 0 40px 40px; }\n" +
+            "    .results h2 { margin-bottom: 16px; font-size: 18px; color: #1e3a5f; }\n" +
+            "    table { width: 100%; border-collapse: collapse; background: white; " +
+            "            border-radius: 10px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }\n" +
+            "    th { background: #1e3a5f; color: white; padding: 14px 16px; text-align: left; font-size: 13px; }\n" +
+            "    td { padding: 12px 16px; border-bottom: 1px solid #e5e7eb; font-size: 14px; }\n" +
+            "    tr:last-child td { border-bottom: none; }\n" +
+            "    .row-pass:hover { background: #f0fdf4; }\n" +
+            "    .row-fail:hover { background: #fef2f2; }\n" +
+            "    .badge-pass { background: #dcfce7; color: #15803d; padding: 4px 14px; " +
+            "                  border-radius: 20px; font-weight: 600; font-size: 12px; }\n" +
+            "    .badge-fail { background: #fee2e2; color: #b91c1c; padding: 4px 14px; " +
+            "                  border-radius: 20px; font-weight: 600; font-size: 12px; }\n" +
+            "    footer { text-align: center; padding: 20px; font-size: 12px; color: #9ca3af; }\n";
+    }
+}

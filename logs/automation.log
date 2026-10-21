@@ -1,0 +1,312 @@
+2026-10-21 10:47:50 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.base.BaseTest
+2026-10-21 10:47:50 INFO  [main] BaseTest - =======================================================
+2026-10-21 10:47:50 INFO  [main] BaseTest -   SwagLabs Automation Suite — Assignments 7 & 8 START
+2026-10-21 10:47:50 INFO  [main] BaseTest - =======================================================
+2026-10-21 10:47:50 TRACE [main] LoggerManager - TRACE: Entering setUp() method — WebDriver initialisation starting
+2026-10-21 10:47:50 DEBUG [main] LoggerManager - DEBUG: ChromeOptions configured — headless=false, maximized=true
+2026-10-21 10:47:50 INFO  [main] LoggerManager - INFO:  Browser launched. Navigating to https://www.saucedemo.com/
+2026-10-21 10:47:50 WARN  [main] LoggerManager - WARN:  Login button took 4.5 seconds to become clickable (threshold: 3s)
+2026-10-21 10:47:50 ERROR [main] LoggerManager - ERROR: Inventory page title mismatch. Expected='Products', Actual=''
+2026-10-21 10:47:50 FATAL [main] LoggerManager - FATAL: WebDriver session terminated unexpectedly. No further tests possible.
+2026-10-21 10:47:50 TRACE [main] BaseTest - TRACE: Entering setUp() — test isolation browser launch
+2026-10-21 10:47:50 DEBUG [main] BaseTest - DEBUG: Reading 'app.url' from config.properties
+2026-10-21 10:47:50 INFO  [main] BaseTest - Launching Chrome browser via WebDriverManager...
+2026-10-21 10:48:01 DEBUG [main] ConfigReader - DEBUG: ConfigReader static block triggered — loading config.properties
+2026-10-21 10:48:01 INFO  [main] ConfigReader - config.properties loaded successfully. Keys found: [checkout.firstname, page.load.timeout, explicit.wait, invalid.username, checkout.zipcode, implicit.wait, expected.item.count, headless, password, checkout.lastname, invalid.password, browser, inventory.page.url, inventory.page.title, app.url, login.page.url, username]
+2026-10-21 10:48:01 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'implicit.wait'
+2026-10-21 10:48:01 DEBUG [main] ConfigReader - DEBUG: Property retrieved: implicit.wait = 10
+2026-10-21 10:48:01 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'page.load.timeout'
+2026-10-21 10:48:01 DEBUG [main] ConfigReader - DEBUG: Property retrieved: page.load.timeout = 30
+2026-10-21 10:48:01 INFO  [main] BaseTest - Chrome browser launched and maximized successfully.
+2026-10-21 10:48:01 DEBUG [main] BaseTest - DEBUG: WebDriver class = ChromeDriver
+2026-10-21 10:48:01 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'app.url'
+2026-10-21 10:48:01 DEBUG [main] ConfigReader - DEBUG: Property retrieved: app.url = https://www.saucedemo.com/
+2026-10-21 10:48:01 INFO  [main] BaseTest - Navigating browser to URL: https://www.saucedemo.com/
+2026-10-21 10:48:02 INFO  [main] BaseTest - Page loaded. Current URL: https://www.saucedemo.com/
+2026-10-21 10:48:02 TRACE [main] BaseTest - TRACE: setUp() completed — driver is ready for use
+2026-10-21 10:48:02 INFO  [main] E2EPurchaseFlowTest - ======================================================
+2026-10-21 10:48:02 INFO  [main] E2EPurchaseFlowTest -   E2E TEST: testCompletePurchaseFlow — START
+2026-10-21 10:48:02 INFO  [main] E2EPurchaseFlowTest - ======================================================
+2026-10-21 10:48:02 INFO  [main] E2EPurchaseFlowTest - STEP 1-2: Logging in with valid credentials...
+2026-10-21 10:48:02 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.LoginPage
+2026-10-21 10:48:02 DEBUG [main] LoginPage - DEBUG: LoginPage object instantiated.
+2026-10-21 10:48:02 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'username'
+2026-10-21 10:48:02 DEBUG [main] ConfigReader - DEBUG: Property retrieved: username = standard_user
+2026-10-21 10:48:02 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'password'
+2026-10-21 10:48:02 DEBUG [main] ConfigReader - DEBUG: Property retrieved: password = [HIDDEN]
+2026-10-21 10:48:02 INFO  [main] LoginPage - --- Login sequence started ---
+2026-10-21 10:48:02 INFO  [main] LoginPage - Entering username: 'standard_user' into the username field
+2026-10-21 10:48:02 DEBUG [main] LoginPage - DEBUG: Username field populated successfully.
+2026-10-21 10:48:02 INFO  [main] LoginPage - Entering password: [HIDDEN] into the password field
+2026-10-21 10:48:02 DEBUG [main] LoginPage - DEBUG: Password field populated successfully.
+2026-10-21 10:48:02 INFO  [main] LoginPage - Clicking the Login button...
+2026-10-21 10:48:02 INFO  [main] LoginPage - Login button clicked — waiting for page transition.
+2026-10-21 10:48:02 INFO  [main] LoginPage - --- Login sequence completed ---
+2026-10-21 10:48:02 INFO  [main] E2EPurchaseFlowTest - STEP 1-2 DONE: Login sequence completed.
+2026-10-21 10:48:02 INFO  [main] E2EPurchaseFlowTest - STEP 3: Verifying the Products page is displayed...
+2026-10-21 10:48:02 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.InventoryPage
+2026-10-21 10:48:02 DEBUG [main] InventoryPage - DEBUG: InventoryPage object instantiated.
+2026-10-21 10:48:02 DEBUG [main] InventoryPage - DEBUG: Retrieving inventory page title...
+2026-10-21 10:48:02 INFO  [main] InventoryPage - Inventory page title = 'Products'
+2026-10-21 10:48:02 INFO  [main] InventoryPage - Inventory page confirmed loaded. Title = 'Products'
+2026-10-21 10:48:02 INFO  [main] E2EPurchaseFlowTest - STEP 3 PASSED: Products page confirmed. Title = 'Products'.
+2026-10-21 10:48:02 INFO  [main] E2EPurchaseFlowTest - STEP 4: Reading product names then adding two products to cart...
+2026-10-21 10:48:02 INFO  [main] InventoryPage - Product at index 0: 'Sauce Labs Backpack'
+2026-10-21 10:48:03 INFO  [main] InventoryPage - Product at index 1: 'Sauce Labs Bike Light'
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - Selected Product 1: 'Sauce Labs Backpack'
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - Selected Product 2: 'Sauce Labs Bike Light'
+2026-10-21 10:48:03 INFO  [main] InventoryPage - Adding product to cart: 'Sauce Labs Backpack' (index 0)
+2026-10-21 10:48:03 INFO  [main] InventoryPage - 'Sauce Labs Backpack' added to cart successfully.
+2026-10-21 10:48:03 INFO  [main] InventoryPage - Adding product to cart: 'Sauce Labs Bike Light' (index 1)
+2026-10-21 10:48:03 INFO  [main] InventoryPage - 'Sauce Labs Bike Light' added to cart successfully.
+2026-10-21 10:48:03 INFO  [main] InventoryPage - Shopping cart badge count = 2
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - STEP 4 PASSED: Both products added. Cart badge = 2
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - STEP 5: Opening cart and verifying products...
+2026-10-21 10:48:03 INFO  [main] InventoryPage - Clicking shopping cart icon...
+2026-10-21 10:48:03 INFO  [main] InventoryPage - Cart icon clicked — navigating to cart page.
+2026-10-21 10:48:03 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.CartPage
+2026-10-21 10:48:03 DEBUG [main] CartPage - DEBUG: CartPage object instantiated.
+2026-10-21 10:48:03 INFO  [main] CartPage - Cart page title: 'Your Cart'
+2026-10-21 10:48:03 INFO  [main] CartPage - Cart page confirmed loaded.
+2026-10-21 10:48:03 INFO  [main] CartPage - Cart item count: 2
+2026-10-21 10:48:03 INFO  [main] CartPage - Cart item count: 2
+2026-10-21 10:48:03 INFO  [main] CartPage - Cart items: [Sauce Labs Backpack, Sauce Labs Bike Light]
+2026-10-21 10:48:03 INFO  [main] CartPage - Product found in cart: 'Sauce Labs Backpack'
+2026-10-21 10:48:03 INFO  [main] CartPage - Cart items: [Sauce Labs Backpack, Sauce Labs Bike Light]
+2026-10-21 10:48:03 INFO  [main] CartPage - Product found in cart: 'Sauce Labs Bike Light'
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - STEP 5 PASSED: Cart contains both products: ['Sauce Labs Backpack', 'Sauce Labs Bike Light']
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - STEP 6: Clicking Checkout button...
+2026-10-21 10:48:03 INFO  [main] CartPage - Clicking Checkout button...
+2026-10-21 10:48:03 INFO  [main] CartPage - Checkout button clicked — navigating to checkout information page.
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - STEP 6 DONE: Checkout button clicked.
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - STEP 7-8: Entering checkout information and clicking Continue...
+2026-10-21 10:48:03 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.CheckoutPage
+2026-10-21 10:48:03 DEBUG [main] CheckoutPage - DEBUG: CheckoutPage object instantiated.
+2026-10-21 10:48:03 INFO  [main] CheckoutPage - Checkout page title: 'Checkout: Your Information'. Loaded: true
+2026-10-21 10:48:03 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'checkout.firstname'
+2026-10-21 10:48:03 DEBUG [main] ConfigReader - DEBUG: Property retrieved: checkout.firstname = Nancy
+2026-10-21 10:48:03 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'checkout.lastname'
+2026-10-21 10:48:03 DEBUG [main] ConfigReader - DEBUG: Property retrieved: checkout.lastname = George
+2026-10-21 10:48:03 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'checkout.zipcode'
+2026-10-21 10:48:03 DEBUG [main] ConfigReader - DEBUG: Property retrieved: checkout.zipcode = 411001
+2026-10-21 10:48:03 INFO  [main] E2EPurchaseFlowTest - Checkout info — First: Nancy | Last: George | Zip: 411001
+2026-10-21 10:48:03 INFO  [main] CheckoutPage - === Filling Checkout Information Form ===
+2026-10-21 10:48:03 INFO  [main] CheckoutPage - Entering First Name: 'Nancy'
+2026-10-21 10:48:03 DEBUG [main] CheckoutPage - DEBUG: First name entered successfully.
+2026-10-21 10:48:03 INFO  [main] CheckoutPage - Entering Last Name: 'George'
+2026-10-21 10:48:03 DEBUG [main] CheckoutPage - DEBUG: Last name entered successfully.
+2026-10-21 10:48:03 INFO  [main] CheckoutPage - Entering Postal Code: '411001'
+2026-10-21 10:48:03 DEBUG [main] CheckoutPage - DEBUG: Postal code entered successfully.
+2026-10-21 10:48:03 INFO  [main] CheckoutPage - === Checkout Information Form Filled ===
+2026-10-21 10:48:03 INFO  [main] CheckoutPage - Clicking Continue button on checkout form...
+2026-10-21 10:48:03 INFO  [main] CheckoutPage - Continue button clicked — proceeding to Checkout Overview.
+2026-10-21 10:48:13 INFO  [main] E2EPurchaseFlowTest - STEP 7-8 PASSED: Checkout info submitted with no errors.
+2026-10-21 10:48:13 INFO  [main] E2EPurchaseFlowTest - STEP 9: Validating the Checkout Overview page...
+2026-10-21 10:48:13 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.OverviewPage
+2026-10-21 10:48:13 DEBUG [main] OverviewPage - DEBUG: OverviewPage object instantiated.
+2026-10-21 10:48:13 INFO  [main] OverviewPage - Overview page title: 'Checkout: Overview'. Loaded: true
+2026-10-21 10:48:13 INFO  [main] OverviewPage - Overview: 2 item(s) in order summary.
+2026-10-21 10:48:13 INFO  [main] E2EPurchaseFlowTest - STEP 9a PASSED: 2 product(s) displayed in overview.
+2026-10-21 10:48:13 INFO  [main] OverviewPage - Payment Information section visible: true
+2026-10-21 10:48:13 INFO  [main] E2EPurchaseFlowTest - STEP 9b PASSED: Payment Information section is visible.
+2026-10-21 10:48:13 INFO  [main] OverviewPage - Shipping Information section visible: true
+2026-10-21 10:48:13 INFO  [main] E2EPurchaseFlowTest - STEP 9c PASSED: Shipping Information section is visible.
+2026-10-21 10:48:13 INFO  [main] OverviewPage - Total amount displayed: 'Total: $43.18'
+2026-10-21 10:48:13 INFO  [main] OverviewPage - Total amount displayed: 'Total: $43.18'
+2026-10-21 10:48:13 INFO  [main] E2EPurchaseFlowTest - STEP 9d PASSED: Total amount displayed: 'Total: $43.18'
+2026-10-21 10:48:13 INFO  [main] E2EPurchaseFlowTest - STEP 9 PASSED: All overview page validations successful.
+2026-10-21 10:48:13 INFO  [main] E2EPurchaseFlowTest - STEP 10: Clicking Finish to place the order...
+2026-10-21 10:48:13 INFO  [main] OverviewPage - Clicking Finish button to place the order...
+2026-10-21 10:48:14 INFO  [main] OverviewPage - Finish button clicked — order submitted.
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - STEP 10 DONE: Finish button clicked — order placed.
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - STEP 11: Verifying order completion confirmation...
+2026-10-21 10:48:14 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.CompletePage
+2026-10-21 10:48:14 DEBUG [main] CompletePage - DEBUG: CompletePage object instantiated.
+2026-10-21 10:48:14 INFO  [main] CompletePage - Complete page loaded: true
+2026-10-21 10:48:14 INFO  [main] CompletePage - Order confirmation header: 'Thank you for your order!'
+2026-10-21 10:48:14 INFO  [main] CompletePage - Order confirmed successfully. Header: 'Thank you for your order!'
+2026-10-21 10:48:14 INFO  [main] CompletePage - Order confirmation header: 'Thank you for your order!'
+2026-10-21 10:48:14 INFO  [main] CompletePage - Order confirmation header: 'Thank you for your order!'
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - STEP 11 PASSED: Order confirmed. Message: 'Thank you for your order!'
+2026-10-21 10:48:14 DEBUG [main] CompletePage - DEBUG: Completion sub-text: 'Your order has been dispatched, and will arrive just as fast as the pony can get there!'
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - Completion sub-text: 'Your order has been dispatched, and will arrive just as fast as the pony can get there!'
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - STEP 12-13: Clicking 'Back Home' and verifying Products page...
+2026-10-21 10:48:14 INFO  [main] CompletePage - Clicking 'Back Home' button...
+2026-10-21 10:48:14 INFO  [main] CompletePage - 'Back Home' clicked — returning to Products page.
+2026-10-21 10:48:14 DEBUG [main] InventoryPage - DEBUG: InventoryPage object instantiated.
+2026-10-21 10:48:14 DEBUG [main] InventoryPage - DEBUG: Retrieving inventory page title...
+2026-10-21 10:48:14 INFO  [main] InventoryPage - Inventory page title = 'Products'
+2026-10-21 10:48:14 INFO  [main] InventoryPage - Inventory page confirmed loaded. Title = 'Products'
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - STEP 12-13 PASSED: Successfully returned to Products page.
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - STEP 14: Logging out via the hamburger menu...
+2026-10-21 10:48:14 INFO  [main] InventoryPage - === Logout sequence started ===
+2026-10-21 10:48:14 INFO  [main] InventoryPage - Opening hamburger menu (sidebar)...
+2026-10-21 10:48:14 DEBUG [main] InventoryPage - DEBUG: Hamburger menu button clicked.
+2026-10-21 10:48:14 INFO  [main] InventoryPage - Clicking Logout link in sidebar...
+2026-10-21 10:48:14 INFO  [main] InventoryPage - Logout link clicked — browser should redirect to login page.
+2026-10-21 10:48:14 INFO  [main] InventoryPage - === Logout sequence completed ===
+2026-10-21 10:48:14 DEBUG [main] LoginPage - DEBUG: LoginPage object instantiated.
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - STEP 14 PASSED: Logout successful. Login page is displayed.
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - ======================================================
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest -   E2E TEST: testCompletePurchaseFlow — ALL 14 STEPS PASSED
+2026-10-21 10:48:14 INFO  [main] E2EPurchaseFlowTest - ======================================================
+2026-10-21 10:48:14 DEBUG [main] BaseTest - DEBUG: Entering tearDown() — closing browser
+2026-10-21 10:48:14 INFO  [main] BaseTest - Closing browser...
+2026-10-21 10:48:15 INFO  [main] BaseTest - Browser closed. Driver set to null.
+2026-10-21 10:48:15 TRACE [main] BaseTest - TRACE: tearDown() completed
+2026-10-21 15:45:48 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.base.BaseTest
+2026-10-21 15:45:48 INFO  [main] BaseTest - =======================================================
+2026-10-21 15:45:48 INFO  [main] BaseTest -   SwagLabs Automation Suite — Assignments 7 & 8 START
+2026-10-21 15:45:48 INFO  [main] BaseTest - =======================================================
+2026-10-21 15:45:48 TRACE [main] LoggerManager - TRACE: Entering setUp() method — WebDriver initialisation starting
+2026-10-21 15:45:48 DEBUG [main] LoggerManager - DEBUG: ChromeOptions configured — headless=false, maximized=true
+2026-10-21 15:45:48 INFO  [main] LoggerManager - INFO:  Browser launched. Navigating to https://www.saucedemo.com/
+2026-10-21 15:45:48 WARN  [main] LoggerManager - WARN:  Login button took 4.5 seconds to become clickable (threshold: 3s)
+2026-10-21 15:45:48 ERROR [main] LoggerManager - ERROR: Inventory page title mismatch. Expected='Products', Actual=''
+2026-10-21 15:45:48 FATAL [main] LoggerManager - FATAL: WebDriver session terminated unexpectedly. No further tests possible.
+2026-10-21 15:45:48 TRACE [main] BaseTest - TRACE: Entering setUp() — test isolation browser launch
+2026-10-21 15:45:48 DEBUG [main] BaseTest - DEBUG: Reading 'app.url' from config.properties
+2026-10-21 15:45:48 INFO  [main] BaseTest - Launching Chrome browser via WebDriverManager...
+2026-10-21 15:45:55 DEBUG [main] ConfigReader - DEBUG: ConfigReader static block triggered — loading config.properties
+2026-10-21 15:45:55 INFO  [main] ConfigReader - config.properties loaded successfully. Keys found: [checkout.firstname, page.load.timeout, explicit.wait, invalid.username, checkout.zipcode, implicit.wait, expected.item.count, headless, password, checkout.lastname, invalid.password, browser, inventory.page.url, inventory.page.title, app.url, login.page.url, username]
+2026-10-21 15:45:55 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'implicit.wait'
+2026-10-21 15:45:55 DEBUG [main] ConfigReader - DEBUG: Property retrieved: implicit.wait = 10
+2026-10-21 15:45:55 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'page.load.timeout'
+2026-10-21 15:45:55 DEBUG [main] ConfigReader - DEBUG: Property retrieved: page.load.timeout = 30
+2026-10-21 15:45:55 INFO  [main] BaseTest - Chrome browser launched and maximized successfully.
+2026-10-21 15:45:55 DEBUG [main] BaseTest - DEBUG: WebDriver class = ChromeDriver
+2026-10-21 15:45:55 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'app.url'
+2026-10-21 15:45:55 DEBUG [main] ConfigReader - DEBUG: Property retrieved: app.url = https://www.saucedemo.com/
+2026-10-21 15:45:55 INFO  [main] BaseTest - Navigating browser to URL: https://www.saucedemo.com/
+2026-10-21 15:46:06 INFO  [main] BaseTest - Page loaded. Current URL: https://www.saucedemo.com/
+2026-10-21 15:46:06 TRACE [main] BaseTest - TRACE: setUp() completed — driver is ready for use
+2026-10-21 15:46:06 INFO  [main] E2EPurchaseFlowTest - ======================================================
+2026-10-21 15:46:06 INFO  [main] E2EPurchaseFlowTest -   E2E TEST: testCompletePurchaseFlow — START
+2026-10-21 15:46:06 INFO  [main] E2EPurchaseFlowTest - ======================================================
+2026-10-21 15:46:06 INFO  [main] E2EPurchaseFlowTest - STEP 1-2: Logging in with valid credentials...
+2026-10-21 15:46:06 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.LoginPage
+2026-10-21 15:46:06 DEBUG [main] LoginPage - DEBUG: LoginPage object instantiated.
+2026-10-21 15:46:06 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'username'
+2026-10-21 15:46:06 DEBUG [main] ConfigReader - DEBUG: Property retrieved: username = standard_user
+2026-10-21 15:46:06 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'password'
+2026-10-21 15:46:06 DEBUG [main] ConfigReader - DEBUG: Property retrieved: password = [HIDDEN]
+2026-10-21 15:46:06 INFO  [main] LoginPage - --- Login sequence started ---
+2026-10-21 15:46:06 INFO  [main] LoginPage - Entering username: 'standard_user' into the username field
+2026-10-21 15:46:06 DEBUG [main] LoginPage - DEBUG: Username field populated successfully.
+2026-10-21 15:46:06 INFO  [main] LoginPage - Entering password: [HIDDEN] into the password field
+2026-10-21 15:46:06 DEBUG [main] LoginPage - DEBUG: Password field populated successfully.
+2026-10-21 15:46:06 INFO  [main] LoginPage - Clicking the Login button...
+2026-10-21 15:46:07 INFO  [main] LoginPage - Login button clicked — waiting for page transition.
+2026-10-21 15:46:07 INFO  [main] LoginPage - --- Login sequence completed ---
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - STEP 1-2 DONE: Login sequence completed.
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - STEP 3: Verifying the Products page is displayed...
+2026-10-21 15:46:07 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.InventoryPage
+2026-10-21 15:46:07 DEBUG [main] InventoryPage - DEBUG: InventoryPage object instantiated.
+2026-10-21 15:46:07 DEBUG [main] InventoryPage - DEBUG: Retrieving inventory page title...
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Inventory page title = 'Products'
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Inventory page confirmed loaded. Title = 'Products'
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - STEP 3 PASSED: Products page confirmed. Title = 'Products'.
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - STEP 4: Reading product names then adding two products to cart...
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Product at index 0: 'Sauce Labs Backpack'
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Product at index 1: 'Sauce Labs Bike Light'
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - Selected Product 1: 'Sauce Labs Backpack'
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - Selected Product 2: 'Sauce Labs Bike Light'
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Adding product to cart: 'Sauce Labs Backpack' (index 0)
+2026-10-21 15:46:07 INFO  [main] InventoryPage - 'Sauce Labs Backpack' added to cart successfully.
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Adding product to cart: 'Sauce Labs Bike Light' (index 1)
+2026-10-21 15:46:07 INFO  [main] InventoryPage - 'Sauce Labs Bike Light' added to cart successfully.
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Shopping cart badge count = 2
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - STEP 4 PASSED: Both products added. Cart badge = 2
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - STEP 5: Opening cart and verifying products...
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Clicking shopping cart icon...
+2026-10-21 15:46:07 INFO  [main] InventoryPage - Cart icon clicked — navigating to cart page.
+2026-10-21 15:46:07 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.CartPage
+2026-10-21 15:46:07 DEBUG [main] CartPage - DEBUG: CartPage object instantiated.
+2026-10-21 15:46:07 INFO  [main] CartPage - Cart page title: 'Your Cart'
+2026-10-21 15:46:07 INFO  [main] CartPage - Cart page confirmed loaded.
+2026-10-21 15:46:07 INFO  [main] CartPage - Cart item count: 2
+2026-10-21 15:46:07 INFO  [main] CartPage - Cart item count: 2
+2026-10-21 15:46:07 INFO  [main] CartPage - Cart items: [Sauce Labs Backpack, Sauce Labs Bike Light]
+2026-10-21 15:46:07 INFO  [main] CartPage - Product found in cart: 'Sauce Labs Backpack'
+2026-10-21 15:46:07 INFO  [main] CartPage - Cart items: [Sauce Labs Backpack, Sauce Labs Bike Light]
+2026-10-21 15:46:07 INFO  [main] CartPage - Product found in cart: 'Sauce Labs Bike Light'
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - STEP 5 PASSED: Cart contains both products: ['Sauce Labs Backpack', 'Sauce Labs Bike Light']
+2026-10-21 15:46:07 INFO  [main] E2EPurchaseFlowTest - STEP 6: Clicking Checkout button...
+2026-10-21 15:46:07 INFO  [main] CartPage - Clicking Checkout button...
+2026-10-21 15:46:08 INFO  [main] CartPage - Checkout button clicked — navigating to checkout information page.
+2026-10-21 15:46:08 INFO  [main] E2EPurchaseFlowTest - STEP 6 DONE: Checkout button clicked.
+2026-10-21 15:46:08 INFO  [main] E2EPurchaseFlowTest - STEP 7-8: Entering checkout information and clicking Continue...
+2026-10-21 15:46:08 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.CheckoutPage
+2026-10-21 15:46:08 DEBUG [main] CheckoutPage - DEBUG: CheckoutPage object instantiated.
+2026-10-21 15:46:08 INFO  [main] CheckoutPage - Checkout page title: 'Checkout: Your Information'. Loaded: true
+2026-10-21 15:46:08 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'checkout.firstname'
+2026-10-21 15:46:08 DEBUG [main] ConfigReader - DEBUG: Property retrieved: checkout.firstname = Nancy
+2026-10-21 15:46:08 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'checkout.lastname'
+2026-10-21 15:46:08 DEBUG [main] ConfigReader - DEBUG: Property retrieved: checkout.lastname = George
+2026-10-21 15:46:08 TRACE [main] ConfigReader - TRACE: getProperty() called with key = 'checkout.zipcode'
+2026-10-21 15:46:08 DEBUG [main] ConfigReader - DEBUG: Property retrieved: checkout.zipcode = 411001
+2026-10-21 15:46:08 INFO  [main] E2EPurchaseFlowTest - Checkout info — First: Nancy | Last: George | Zip: 411001
+2026-10-21 15:46:08 INFO  [main] CheckoutPage - === Filling Checkout Information Form ===
+2026-10-21 15:46:08 INFO  [main] CheckoutPage - Entering First Name: 'Nancy'
+2026-10-21 15:46:08 DEBUG [main] CheckoutPage - DEBUG: First name entered successfully.
+2026-10-21 15:46:08 INFO  [main] CheckoutPage - Entering Last Name: 'George'
+2026-10-21 15:46:08 DEBUG [main] CheckoutPage - DEBUG: Last name entered successfully.
+2026-10-21 15:46:08 INFO  [main] CheckoutPage - Entering Postal Code: '411001'
+2026-10-21 15:46:08 DEBUG [main] CheckoutPage - DEBUG: Postal code entered successfully.
+2026-10-21 15:46:08 INFO  [main] CheckoutPage - === Checkout Information Form Filled ===
+2026-10-21 15:46:08 INFO  [main] CheckoutPage - Clicking Continue button on checkout form...
+2026-10-21 15:46:08 INFO  [main] CheckoutPage - Continue button clicked — proceeding to Checkout Overview.
+2026-10-21 15:46:18 INFO  [main] E2EPurchaseFlowTest - STEP 7-8 PASSED: Checkout info submitted with no errors.
+2026-10-21 15:46:18 INFO  [main] E2EPurchaseFlowTest - STEP 9: Validating the Checkout Overview page...
+2026-10-21 15:46:18 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.OverviewPage
+2026-10-21 15:46:18 DEBUG [main] OverviewPage - DEBUG: OverviewPage object instantiated.
+2026-10-21 15:46:18 INFO  [main] OverviewPage - Overview page title: 'Checkout: Overview'. Loaded: true
+2026-10-21 15:46:19 INFO  [main] OverviewPage - Overview: 2 item(s) in order summary.
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 9a PASSED: 2 product(s) displayed in overview.
+2026-10-21 15:46:19 INFO  [main] OverviewPage - Payment Information section visible: true
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 9b PASSED: Payment Information section is visible.
+2026-10-21 15:46:19 INFO  [main] OverviewPage - Shipping Information section visible: true
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 9c PASSED: Shipping Information section is visible.
+2026-10-21 15:46:19 INFO  [main] OverviewPage - Total amount displayed: 'Total: $43.18'
+2026-10-21 15:46:19 INFO  [main] OverviewPage - Total amount displayed: 'Total: $43.18'
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 9d PASSED: Total amount displayed: 'Total: $43.18'
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 9 PASSED: All overview page validations successful.
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 10: Clicking Finish to place the order...
+2026-10-21 15:46:19 INFO  [main] OverviewPage - Clicking Finish button to place the order...
+2026-10-21 15:46:19 INFO  [main] OverviewPage - Finish button clicked — order submitted.
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 10 DONE: Finish button clicked — order placed.
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 11: Verifying order completion confirmation...
+2026-10-21 15:46:19 TRACE [main] LoggerManager - TRACE: Creating logger for class: com.swaglabs.pages.CompletePage
+2026-10-21 15:46:19 DEBUG [main] CompletePage - DEBUG: CompletePage object instantiated.
+2026-10-21 15:46:19 INFO  [main] CompletePage - Complete page loaded: true
+2026-10-21 15:46:19 INFO  [main] CompletePage - Order confirmation header: 'Thank you for your order!'
+2026-10-21 15:46:19 INFO  [main] CompletePage - Order confirmed successfully. Header: 'Thank you for your order!'
+2026-10-21 15:46:19 INFO  [main] CompletePage - Order confirmation header: 'Thank you for your order!'
+2026-10-21 15:46:19 INFO  [main] CompletePage - Order confirmation header: 'Thank you for your order!'
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 11 PASSED: Order confirmed. Message: 'Thank you for your order!'
+2026-10-21 15:46:19 DEBUG [main] CompletePage - DEBUG: Completion sub-text: 'Your order has been dispatched, and will arrive just as fast as the pony can get there!'
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - Completion sub-text: 'Your order has been dispatched, and will arrive just as fast as the pony can get there!'
+2026-10-21 15:46:19 INFO  [main] E2EPurchaseFlowTest - STEP 12-13: Clicking 'Back Home' and verifying Products page...
+2026-10-21 15:46:19 INFO  [main] CompletePage - Clicking 'Back Home' button...
+2026-10-21 15:46:19 INFO  [main] CompletePage - 'Back Home' clicked — returning to Products page.
+2026-10-21 15:46:19 DEBUG [main] InventoryPage - DEBUG: InventoryPage object instantiated.
+2026-10-21 15:46:19 DEBUG [main] InventoryPage - DEBUG: Retrieving inventory page title...
+2026-10-21 15:46:20 INFO  [main] InventoryPage - Inventory page title = 'Products'
+2026-10-21 15:46:20 INFO  [main] InventoryPage - Inventory page confirmed loaded. Title = 'Products'
+2026-10-21 15:46:20 INFO  [main] E2EPurchaseFlowTest - STEP 12-13 PASSED: Successfully returned to Products page.
+2026-10-21 15:46:20 INFO  [main] E2EPurchaseFlowTest - STEP 14: Logging out via the hamburger menu...
+2026-10-21 15:46:20 INFO  [main] InventoryPage - === Logout sequence started ===
+2026-10-21 15:46:20 INFO  [main] InventoryPage - Opening hamburger menu (sidebar)...
+2026-10-21 15:46:20 DEBUG [main] InventoryPage - DEBUG: Hamburger menu button clicked.
+2026-10-21 15:46:20 INFO  [main] InventoryPage - Clicking Logout link in sidebar...
+2026-10-21 15:46:21 INFO  [main] InventoryPage - Logout link clicked — browser should redirect to login page.
+2026-10-21 15:46:21 INFO  [main] InventoryPage - === Logout sequence completed ===
+2026-10-21 15:46:21 DEBUG [main] LoginPage - DEBUG: LoginPage object instantiated.
+2026-10-21 15:46:21 INFO  [main] E2EPurchaseFlowTest - STEP 14 PASSED: Logout successful. Login page is displayed.
+2026-10-21 15:46:21 INFO  [main] E2EPurchaseFlowTest - ======================================================
+2026-10-21 15:46:21 INFO  [main] E2EPurchaseFlowTest -   E2E TEST: testCompletePurchaseFlow — ALL 14 STEPS PASSED
+2026-10-21 15:46:21 INFO  [main] E2EPurchaseFlowTest - ======================================================
+2026-10-21 15:46:21 DEBUG [main] BaseTest - DEBUG: Entering tearDown() — closing browser
+2026-10-21 15:46:21 INFO  [main] BaseTest - Closing browser...
+2026-10-21 15:46:49 INFO  [main] BaseTest - Browser closed. Driver set to null.
+2026-10-21 15:46:49 TRACE [main] BaseTest - TRACE: tearDown() completed
